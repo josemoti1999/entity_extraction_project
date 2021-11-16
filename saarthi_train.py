@@ -71,6 +71,15 @@ NUM_LOCATION = 4
 
 train_df = pd.read_csv(FOLDER_PATH+'train_data.csv')
 val_df = pd.read_csv(FOLDER_PATH+'valid_data.csv')
+set1 = set(train_df['transcription'])
+set2 = set(val_df['transcription'])
+print('Validation data consists of same sentences as train data if the sound path is ignored.')
+train_df.drop('path',axis='columns', inplace=True)
+train_df.drop_duplicates(inplace=True)
+full = train_df.sample(frac=1).reset_index(drop=True)
+train_df = full.loc[:199,:]
+val_df = full.loc[200:,:]
+print("New train shape-",train_df.shape,", New val shape-",val_df.shape)
 action_enc = LabelEncoder()
 action_train = action_enc.fit_transform(train_df['action'])
 action_val = action_enc.transform(val_df['action'])

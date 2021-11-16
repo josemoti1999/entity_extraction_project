@@ -70,6 +70,9 @@ NUM_OBJECT = 14
 NUM_LOCATION = 4
 
 test_df = pd.read_csv(TEST_PATH)
+test_df.drop('path',axis='columns', inplace=True)
+test_df.drop_duplicates(inplace=True)
+print("Test shape is", test_df.shape)
 
 action_enc = LabelEncoder()
 action_enc.classes_ = np.load(FOLDER_PATH+'action_encoder.npy', allow_pickle=True)
