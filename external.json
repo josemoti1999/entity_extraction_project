@@ -1,0 +1,7 @@
+{
+	"BATCH_SIZE":512,
+	"MAX_LEN":13,
+	"EPOCHS":5,
+	"FOLDER_PATH":"/content/drive/MyDrive/Saarthi/",
+	"TEST_PATH":"/content/drive/MyDrive/Saarthi/valid_data.csv"
+}
