@@ -1,5 +1,5 @@
 {
-	"BATCH_SIZE":512,
+	"BATCH_SIZE":32,
 	"MAX_LEN":13,
 	"EPOCHS":20,
 	"FOLDER_PATH":"/content/drive/MyDrive/Saarthi/",
